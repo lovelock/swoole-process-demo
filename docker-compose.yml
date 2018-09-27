@@ -1,0 +1,14 @@
+version: '3.4'
+services:
+    swoole:
+        image: "zaherg/php72-swoole"
+        ports:
+            - "9501:9501"
+        volumes:
+            - "./src:/var/www"
+        command: "php -S 0.0.0.0:8080 -t /var/www"
+
+    redis:
+        image: "redis"
+        ports:
+            - "6379:6379"
